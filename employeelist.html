@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        .glow-border {
+            box-shadow: 0 0 15px rgba(0, 162, 255, 0.75);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .glow-border:hover {
+            box-shadow: 0 0 25px rgba(0, 162, 255, 1), 0 0 50px rgba(0, 162, 255, 0.5);
+        }
+
+
+        tbody tr:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s ease;
+            background-color: rgba(173, 216, 230, 0.4);
+        }
+
+
+        .background-image {
+            background-image: url('https://i.imgur.com/F0fnfpO.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="background-image bg-cover bg-center">
+    <div class="container mx-auto p-4">
+        <h1 class="text-center text-3xl font-bold text-black mb-8 bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg border-collapse">Employee List</h1>
+
+        <table class="min-w-full max-w-6xl mx-auto bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg border-collapse">
+            <thead>
+                <tr class="bg-blue-900 text-white">
+                    <th class="py-4 px-6 text-left">Name</th>
+                    <th class="py-4 px-6 text-left">Job Title</th>
+                    <th class="py-4 px-6 text-left">Department</th>
+                    <th class="py-4 px-6 text-left">Email</th>
+                    <th class="py-4 px-6 text-left">Contact No.</th>
+                    <th class="py-4 px-6 text-left">Address</th>
+                    <th class="py-4 px-6 text-left">Sex</th>
+                    <th class="py-4 px-6 text-left">Marital Status</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                <tr>
+                    <td class="py-2 px-4 border border-gray-300">Ivan Petrov</td>
+                    <td class="py-2 px-4 border border-gray-300">Software Engineer</td>
+                    <td class="py-2 px-4 border border-gray-300">IT</td>
+                    <td class="py-2 px-4 border border-gray-300">ivan.petrov@sinksrus.com</td>
+                    <td class="py-2 px-4 border border-gray-300">555-6789</td>
+                    <td class="py-2 px-4 border border-gray-300">12 Red Square, Moscow</td>
+                    <td class="py-2 px-4 border border-gray-300">Male</td>
+                    <td class="py-2 px-4 border border-gray-300">Single</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border border-gray-300">Pedro Los Baños</td>
+                    <td class="py-2 px-4 border border-gray-300">Marketing Manager</td>
+                    <td class="py-2 px-4 border border-gray-300">Marketing</td>
+                    <td class="py-2 px-4 border border-gray-300">pedro_los_banos@sinksrus.com</td>
+                    <td class="py-2 px-4 border border-gray-300">-</td>
+                    <td class="py-2 px-4 border border-gray-300">123 Mabini St</td>
+                    <td class="py-2 px-4 border border-gray-300">Male</td>
+                    <td class="py-2 px-4 border border-gray-300">Married</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border border-gray-300">Ana Gómez</td>
+                    <td class="py-2 px-4 border border-gray-300">HR Specialist</td>
+                    <td class="py-2 px-4 border border-gray-300">HR</td>
+                    <td class="py-2 px-4 border border-gray-300">ana.gomez@sinksrus.com</td>
+                    <td class="py-2 px-4 border border-gray-300">555-1526</td>
+                    <td class="py-2 px-4 border border-gray-300">-</td>
+                    <td class="py-2 px-4 border border-gray-300">Female</td>
+                    <td class="py-2 px-4 border border-gray-300">Divorced</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border border-gray-300">John Wu</td>
+                    <td class="py-2 px-4 border border-gray-300">Sales Associate</td>
+                    <td class="py-2 px-4 border border-gray-300">Sales</td>
+                    <td class="py-2 px-4 border border-gray-300">john.wu@sinksrus.com</td>
+                    <td class="py-2 px-4 border border-gray-300">555-6925</td>
+                    <td class="py-2 px-4 border border-gray-300">456 Rizal St</td>
+                    <td class="py-2 px-4 border border-gray-300">Male</td>
+                    <td class="py-2 px-4 border border-gray-300">Single</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border border-gray-300">Emma Wilson</td>
+                    <td class="py-2 px-4 border border-gray-300">CEO</td>
+                    <td class="py-2 px-4 border border-gray-300">Admin</td>
+                    <td class="py-2 px-4 border border-gray-300">emma@sinksrus.com</td>
+                    <td class="py-2 px-4 border border-gray-300">555-1111</td>
+                    <td class="py-2 px-4 border border-gray-300">-</td>
+                    <td class="py-2 px-4 border border-gray-300">Female</td>
+                    <td class="py-2 px-4 border border-gray-300">Married</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
