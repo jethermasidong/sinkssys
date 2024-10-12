@@ -18,7 +18,7 @@
         tbody tr:hover {
             transform: scale(1.02);
             transition: transform 0.2s ease;
-            background-color: rgba(173, 216, 230, 0.4);
+            background-color: rgba(173, 216, 230, 0.6);
         }
 
         .background-image {
@@ -46,21 +46,32 @@
         table {
             width: 90%; 
             margin: 0 auto; 
+            border-collapse: collapse;
         }
 
         th, td {
             padding: 16px;
             font-size: 1.1rem; 
+            border: 2px solid rgba(0, 0, 0, 0.5); /* Adjusted border for better visibility */
+        }
+
+        th {
+            background-color: rgba(0, 123, 255, 0.8); /* Darker blue for header */
+            color: white;
+        }
+
+        td {
+            background-color: white; /* White background for table cells */
         }
     </style>
 </head>
 <body class="background-image bg-cover bg-center">
     <div class="container mx-auto p-4">
-        <h1 class="text-center text-3xl font-bold text-black mb-8 bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg border-collapse">Employee List</h1>
+        <h1 class="text-center text-3xl font-bold text-black mb-8 bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg">Employee List</h1>
 
-        <table class="min-w-full max-w-6xl mx-auto bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg border-collapse">
+        <table class="min-w-full max-w-6xl mx-auto bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg">
             <thead>
-                <tr class="bg-blue-900 text-white">
+                <tr>
                     <th class="text-left">Name</th>
                     <th class="text-left">Job Title</th>
                     <th class="text-left">Department</th>
@@ -73,54 +84,54 @@
             </thead>
             <tbody class="text-gray-700">
                 <tr>
-                    <td class="border border-gray-300">Ivan Petrov</td>
-                    <td class="border border-gray-300">Software Engineer</td>
-                    <td class="border border-gray-300">IT</td>
-                    <td class="border border-gray-300">ivan.petrov@sinksrus.com</td>
-                    <td class="border border-gray-300">555-6789</td>
-                    <td class="border border-gray-300">12 Red Square, Moscow</td>
-                    <td class="border border-gray-300">Male</td>
-                    <td class="border border-gray-300">Single</td>
+                    <td>Ivan Petrov</td>
+                    <td>Software Engineer</td>
+                    <td>IT</td>
+                    <td>ivan.petrov@sinksrus.com</td>
+                    <td>555-6789</td>
+                    <td>12 Red Square, Moscow</td>
+                    <td>Male</td>
+                    <td>Single</td>
                 </tr>
                 <tr>
-                    <td class="border border-gray-300">Pedro Los Baños</td>
-                    <td class="border border-gray-300">Marketing Manager</td>
-                    <td class="border border-gray-300">Marketing</td>
-                    <td class="border border-gray-300">pedro_los_banos@sinksrus.com</td>
-                    <td class="border border-gray-300">-</td>
-                    <td class="border border-gray-300">123 Mabini St</td>
-                    <td class="border border-gray-300">Male</td>
-                    <td class="border border-gray-300">Married</td>
+                    <td>Pedro Los Baños</td>
+                    <td>Marketing Manager</td>
+                    <td>Marketing</td>
+                    <td>pedro_los_banos@sinksrus.com</td>
+                    <td>-</td>
+                    <td>123 Mabini St</td>
+                    <td>Male</td>
+                    <td>Married</td>
                 </tr>
                 <tr>
-                    <td class="border border-gray-300">Ana Gómez</td>
-                    <td class="border border-gray-300">HR Specialist</td>
-                    <td class="border border-gray-300">HR</td>
-                    <td class="border border-gray-300">ana.gomez@sinksrus.com</td>
-                    <td class="border border-gray-300">555-1526</td>
-                    <td class="border border-gray-300">-</td>
-                    <td class="border border-gray-300">Female</td>
-                    <td class="border border-gray-300">Divorced</td>
+                    <td>Ana Gómez</td>
+                    <td>HR Specialist</td>
+                    <td>HR</td>
+                    <td>ana.gomez@sinksrus.com</td>
+                    <td>555-1526</td>
+                    <td>-</td>
+                    <td>Female</td>
+                    <td>Divorced</td>
                 </tr>
                 <tr>
-                    <td class="border border-gray-300">John Wu</td>
-                    <td class="border border-gray-300">Sales Associate</td>
-                    <td class="border border-gray-300">Sales</td>
-                    <td class="border border-gray-300">john.wu@sinksrus.com</td>
-                    <td class="border border-gray-300">555-6925</td>
-                    <td class="border border-gray-300">456 Rizal St</td>
-                    <td class="border border-gray-300">Male</td>
-                    <td class="border border-gray-300">Single</td>
+                    <td>John Wu</td>
+                    <td>Sales Associate</td>
+                    <td>Sales</td>
+                    <td>john.wu@sinksrus.com</td>
+                    <td>555-6925</td>
+                    <td>456 Rizal St</td>
+                    <td>Male</td>
+                    <td>Single</td>
                 </tr>
                 <tr>
-                    <td class="border border-gray-300">Emma Wilson</td>
-                    <td class="border border-gray-300">CEO</td>
-                    <td class="border border-gray-300">Admin</td>
-                    <td class="border border-gray-300">emma@sinksrus.com</td>
-                    <td class="border border-gray-300">555-1111</td>
-                    <td class="border border-gray-300">-</td>
-                    <td class="border border-gray-300">Female</td>
-                    <td class="border border-gray-300">Married</td>
+                    <td>Emma Wilson</td>
+                    <td>CEO</td>
+                    <td>Admin</td>
+                    <td>emma@sinksrus.com</td>
+                    <td>555-1111</td>
+                    <td>-</td>
+                    <td>Female</td>
+                    <td>Married</td>
                 </tr>
             </tbody>
         </table>
