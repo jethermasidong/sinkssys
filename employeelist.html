@@ -14,12 +14,37 @@
             background-color: rgba(173, 216, 230, 0.6);
         }
 
-        .background-image {
-            background-image: url('https://i.imgur.com/F0fnfpO.jpeg');
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('image/background.jpeg');
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            opacity: 0.8;
+            background-position: 50% 23%;
+            opacity: 0.8; 
+            z-index: -1; 
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+        }
+
+        th {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+        }
+
+        td {
+            background-color: white;
         }
 
         table {
