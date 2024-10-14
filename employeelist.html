@@ -15,15 +15,14 @@
         }
 
         .background-overlay {
-            position: absolute;
+            position: fixed; /* Change to fixed */
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('image/background.jpeg');
+            background-image: url('https://www.buildhb.com/wp-content/uploads/2023/03/Kohler-Showroom_featured.jpg');
             background-size: cover;
-            background-position: 50% 23%;
-            opacity: 0.8; 
+            background-position: center; /* Centered background */
             z-index: -1; 
         }
 
@@ -31,6 +30,8 @@
             width: 90%;
             margin: 0 auto;
             border-collapse: collapse;
+            position: relative; /* Ensure table appears above background */
+            z-index: 1; /* Bring table in front of the overlay */
         }
 
         th, td {
@@ -79,7 +80,12 @@
         }
     </style>
 </head>
+<<<<<<< HEAD
 <body class="background-image bg-cover bg-center">
+=======
+<body>
+    <div class="background-overlay"></div> <!-- Add background overlay here -->
+>>>>>>> aec43e3855417c15ddd63e43c2cf57279ed4cd6e
     <div class="container mx-auto p-4">
         <h1 class="text-center text-3xl font-bold text-black mb-8 bg-white/75 border-4 border-blue-400 glow-border rounded-lg">Employee List</h1>
 
