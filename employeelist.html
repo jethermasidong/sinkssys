@@ -8,16 +8,9 @@
     <style>
         .glow-border {
             box-shadow: 0 0 15px rgba(0, 162, 255, 0.75);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .glow-border:hover {
-            box-shadow: 0 0 25px rgba(0, 162, 255, 1), 0 0 50px rgba(0, 162, 255, 0.5);
         }
 
         tbody tr:hover {
-            transform: scale(1.02);
-            transition: transform 0.2s ease;
             background-color: rgba(173, 216, 230, 0.6);
         }
 
@@ -29,57 +22,54 @@
             opacity: 0.8;
         }
 
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+        }
+
+        th {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+        }
+
+        td {
+            background-color: white;
+        }
+
         .logout-button {
             background-color: rgba(255, 0, 0, 0.7);
             color: white;
             padding: 10px 20px;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
 
         .logout-button:hover {
             background-color: rgba(255, 0, 0, 1);
         }
-
-        table {
-            width: 90%; 
-            margin: 0 auto; 
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 16px;
-            font-size: 1.1rem; 
-            border: 2px solid rgba(0, 0, 0, 0.5); /* Adjusted border for better visibility */
-        }
-
-        th {
-            background-color: rgba(0, 123, 255, 0.8); /* Darker blue for header */
-            color: white;
-        }
-
-        td {
-            background-color: white; /* White background for table cells */
-        }
     </style>
 </head>
 <body class="background-image bg-cover bg-center">
     <div class="container mx-auto p-4">
-        <h1 class="text-center text-3xl font-bold text-black mb-8 bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg">Employee List</h1>
+        <h1 class="text-center text-3xl font-bold text-black mb-8 bg-white/75 border-4 border-blue-400 glow-border rounded-lg">Employee List</h1>
 
-        <table class="min-w-full max-w-6xl mx-auto bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg">
+        <table class="bg-white/75 border-4 border-blue-400 glow-border rounded-lg shadow-lg">
             <thead>
                 <tr>
-                    <th class="text-left">Name</th>
-                    <th class="text-left">Job Title</th>
-                    <th class="text-left">Department</th>
-                    <th class="text-left">Email</th>
-                    <th class="text-left">Contact No.</th>
-                    <th class="text-left">Address</th>
-                    <th class="text-left">Sex</th>
-                    <th class="text-left">Marital Status</th>
+                    <th>Name</th>
+                    <th>Job Title</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Contact No.</th>
+                    <th>Address</th>
+                    <th>Sex</th>
+                    <th>Marital Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody class="text-gray-700">
@@ -92,6 +82,7 @@
                     <td>12 Red Square, Moscow</td>
                     <td>Male</td>
                     <td>Single</td>
+                    <td><button onclick="openModal('Ivan Petrov', '05/05/2015', 'Bachelor\'s in Computer Science', 'Reading')">View</button></td>
                 </tr>
                 <tr>
                     <td>Pedro Los Baños</td>
@@ -102,6 +93,7 @@
                     <td>123 Mabini St</td>
                     <td>Male</td>
                     <td>Married</td>
+                    <td><button onclick="openModal('Pedro Los Baños', '10/01/2012', 'Master\'s in Business Administration', 'Photography')">View</button></td>
                 </tr>
                 <tr>
                     <td>Ana Gómez</td>
@@ -112,6 +104,7 @@
                     <td>-</td>
                     <td>Female</td>
                     <td>Divorced</td>
+                    <td><button onclick="openModal('Ana Gómez', '11/20/2016', 'Bachelor\'s in Human Resources', 'Traveling')">View</button></td>
                 </tr>
                 <tr>
                     <td>John Wu</td>
@@ -122,6 +115,7 @@
                     <td>456 Rizal St</td>
                     <td>Male</td>
                     <td>Single</td>
+                    <td><button onclick="openModal('John Wu', '04/01/2020', 'Bachelor\'s in Marketing', 'Gaming')">View</button></td>
                 </tr>
                 <tr>
                     <td>Emma Wilson</td>
@@ -132,6 +126,7 @@
                     <td>-</td>
                     <td>Female</td>
                     <td>Married</td>
+                    <td><button onclick="openModal('Emma Wilson', '02/15/2009', 'Master\'s in Business Management', 'Gardening')">View</button></td>
                 </tr>
             </tbody>
         </table>
@@ -142,5 +137,28 @@
             </form>
         </div>
     </div>
+    <div id="employeeModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg">
+            <h2 id="modalName" class="text-xl font-bold mb-4">Employee Details</h2>
+            <p id="modalHireDate"></p>
+            <p id="modalSchoolAttainment"></p>
+            <p id="modalInfo"></p>
+            <button onclick="closeModal()" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(name, hireDate, schoolAttainment, info) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalHireDate').innerText = 'Hire Date: ' + hireDate;
+            document.getElementById('modalSchoolAttainment').innerText = 'School Attainment: ' + schoolAttainment;
+            document.getElementById('modalInfo').innerText = 'Info: ' + info;
+            document.getElementById('employeeModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('employeeModal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
